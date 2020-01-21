@@ -30,3 +30,7 @@ BUILD_FINGERPRINT := vsmart/V620A_open/V620A:9/PKQ1.190302.001/V620A_OPEN_U_M3_2
 
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.sf.lcd_density=400
+
+PRODUCT_PRODUCT_PROPERTIES += \
+    fod.dimming.min=40 \
+    fod.dimming.max=250
