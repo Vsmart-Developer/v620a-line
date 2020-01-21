@@ -19,7 +19,7 @@ public class Startup extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         final String action = intent.getAction();
-        if (ACTION_INITIALIZE_MK_HARDWARE.equals(action)) {
+        if (ACTION_INITIALIZE_LINEAGE_HARDWARE.equals(action)) {
             context.startServiceAsUser(
                     new Intent(context, AODService.class),
                     UserHandle.CURRENT);
