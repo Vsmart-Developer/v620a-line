@@ -14,7 +14,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.util.Log;
 
-import org.mokee.internal.util.FileUtils;
+import org.lineageos.internal.util.FileUtils;
 
 public class AODService extends Service {
 
