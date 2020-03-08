@@ -62,7 +62,6 @@ class FingerprintInscreen : public IFingerprintInscreen {
     sp<IFingerprintInscreenCallback> mCallback;
 
     bool mIconShown;
-    bool mFingerPressed;
 
     void notifyKeyEvent(int value);
     void notifyHal(int32_t cmd);
