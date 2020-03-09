@@ -5,7 +5,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_V620A.mk
+    $(LOCAL_DIR)/aicp_V620A.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_V620A-userdebug
+    aicp_V620A-userdebug
