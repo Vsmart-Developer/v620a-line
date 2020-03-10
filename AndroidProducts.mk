@@ -5,7 +5,7 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_V620A.mk
+    $(LOCAL_DIR)/cherish_V620A.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_V620A-userdebug
+    cherish_V620A-userdebug

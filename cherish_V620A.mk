@@ -12,10 +12,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from V620A device
 $(call inherit-product, device/vsmart/V620A/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common cherish stuff.
+$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := lineage_V620A
+PRODUCT_NAME := cherish_V620A
 PRODUCT_BRAND := vsmart
 PRODUCT_DEVICE := V620A
 PRODUCT_MANUFACTURER := vsmart

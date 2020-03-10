@@ -9,7 +9,7 @@ $(call inherit-product, vendor/vsmart/V620A/V620A-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-cherish
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2232
@@ -17,7 +17,7 @@ TARGET_SCREEN_WIDTH := 1080
 
 # Permissions
 PRODUCT_COPY_FILES += \
-    vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
+    vendor/cherish/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -43,10 +43,6 @@ PRODUCT_PACKAGES += \
 # Touch
 PRODUCT_PACKAGES += \
     lineage.touch@1.0-service.V620A
-
-# Parts
-PRODUCT_PACKAGES += \
-    V620AParts
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
