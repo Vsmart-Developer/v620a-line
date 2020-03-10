@@ -12,10 +12,20 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from V620A device
 $(call inherit-product, device/vsmart/V620A/device.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
-PRODUCT_NAME := lineage_V620A
+# Build type
+CUSTOM_BUILD_TYPE := HI!BAE
+
+# Boot Animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+# Gapps
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_WIFI_EXT := true
+
+PRODUCT_NAME := aosp_V620A
 PRODUCT_BRAND := vsmart
 PRODUCT_DEVICE := V620A
 PRODUCT_MANUFACTURER := vsmart
