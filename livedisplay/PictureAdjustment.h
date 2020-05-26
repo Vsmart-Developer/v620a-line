@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2019 The LineageOS Project
- * Copyright (C) 2020 The lineage Open Source Project
+ * Copyright (C) 2020 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ using ::android::hardware::Return;
 using ::android::hardware::Void;
 
 class PictureAdjustment : public IPictureAdjustment {
-   public:
+  public:
     PictureAdjustment(void* libHandle, uint64_t cookie);
 
     bool isSupported();
@@ -45,11 +45,11 @@ class PictureAdjustment : public IPictureAdjustment {
     Return<void> getPictureAdjustment(getPictureAdjustment_cb _hidl_cb) override;
     Return<void> getDefaultPictureAdjustment(getDefaultPictureAdjustment_cb _hidl_cb) override;
     Return<bool> setPictureAdjustment(
-        const ::vendor::lineage::livedisplay::V2_0::HSIC& hsic) override;
+            const ::vendor::lineage::livedisplay::V2_0::HSIC& hsic) override;
 
     static void updateDefaultPictureAdjustment();
 
-   private:
+  private:
     void* mLibHandle;
     uint64_t mCookie;
 

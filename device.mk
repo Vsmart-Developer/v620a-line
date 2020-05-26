@@ -59,6 +59,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
+    lineage.livedisplay@2.0-init.sh \
     lineage.livedisplay@2.0-service-V620A
 
 # Charger

@@ -1,7 +1,7 @@
 /*
  * Copyright (C) 2016 The CyanogenMod Project
  *               2017-2019 The LineageOS Project
- * Copyright (C) 2020 The lineage Open Source Project
+ * Copyright (C) 2020 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,9 @@
  * limitations under the License.
  */
 
+#include "Utils.h"
+
+#include <cutils/sockets.h>
 #include <errno.h>
 #include <fcntl.h>
 #include <poll.h>
@@ -23,11 +26,8 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <unistd.h>
+
 #include <string>
-
-#include <cutils/sockets.h>
-
-#include "Utils.h"
 
 namespace vendor {
 namespace lineage {

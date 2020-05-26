@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2019 The LineageOS Project
- * Copyright (C) 2020 The lineage Open Source Project
+ * Copyright (C) 2020 The MoKee Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,10 +15,11 @@
  * limitations under the License.
  */
 
+#include "PictureAdjustment.h"
+
 #include <dlfcn.h>
 
 #include "Constants.h"
-#include "PictureAdjustment.h"
 #include "Types.h"
 
 namespace vendor {
@@ -35,16 +36,16 @@ PictureAdjustment::PictureAdjustment(void* libHandle, uint64_t cookie) {
     mLibHandle = libHandle;
     mCookie = cookie;
     disp_api_get_feature_version =
-        reinterpret_cast<int32_t (*)(uint64_t, uint32_t, void*, uint32_t*)>(
-            dlsym(mLibHandle, "disp_api_get_feature_version"));
+            reinterpret_cast<int32_t (*)(uint64_t, uint32_t, void*, uint32_t*)>(
+                    dlsym(mLibHandle, "disp_api_get_feature_version"));
     disp_api_get_global_pa_range = reinterpret_cast<int32_t (*)(uint64_t, uint32_t, void*)>(
-        dlsym(mLibHandle, "disp_api_get_global_pa_range"));
+            dlsym(mLibHandle, "disp_api_get_global_pa_range"));
     disp_api_get_global_pa_config =
-        reinterpret_cast<int32_t (*)(uint64_t, uint32_t, uint32_t*, void*)>(
-            dlsym(mLibHandle, "disp_api_get_global_pa_config"));
+            reinterpret_cast<int32_t (*)(uint64_t, uint32_t, uint32_t*, void*)>(
+                    dlsym(mLibHandle, "disp_api_get_global_pa_config"));
     disp_api_set_global_pa_config =
-        reinterpret_cast<int32_t (*)(uint64_t, uint32_t, uint32_t, void*)>(
-            dlsym(mLibHandle, "disp_api_set_global_pa_config"));
+            reinterpret_cast<int32_t (*)(uint64_t, uint32_t, uint32_t, void*)>(
+                    dlsym(mLibHandle, "disp_api_set_global_pa_config"));
     memset(&mDefaultPictureAdjustment, 0, sizeof(HSIC));
 }
 
@@ -169,7 +170,7 @@ Return<void> PictureAdjustment::getContrastRange(getContrastRange_cb _hidl_cb) {
 }
 
 Return<void> PictureAdjustment::getSaturationThresholdRange(
-    getSaturationThresholdRange_cb _hidl_cb) {
+        getSaturationThresholdRange_cb _hidl_cb) {
     FloatRange range{};
     hsic_ranges r{};
 
@@ -191,13 +192,13 @@ Return<void> PictureAdjustment::getPictureAdjustment(getPictureAdjustment_cb _hi
 }
 
 Return<void> PictureAdjustment::getDefaultPictureAdjustment(
-    getDefaultPictureAdjustment_cb _hidl_cb) {
+        getDefaultPictureAdjustment_cb _hidl_cb) {
     _hidl_cb(mDefaultPictureAdjustment);
     return Void();
 }
 
 Return<bool> PictureAdjustment::setPictureAdjustment(
-    const ::vendor::lineage::livedisplay::V2_0::HSIC& hsic) {
+        const ::vendor::lineage::livedisplay::V2_0::HSIC& hsic) {
     hsic_config config = {0,
                           {static_cast<int32_t>(hsic.hue), hsic.saturation, hsic.intensity,
                            hsic.contrast, hsic.saturationThreshold}};
