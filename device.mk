@@ -53,10 +53,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lineage.touch@1.0-service.V620A
 
-# Parts
-PRODUCT_PACKAGES += \
-    V620AParts
-
 # LiveDisplay
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-init.sh \
