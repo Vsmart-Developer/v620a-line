@@ -19,10 +19,6 @@ TARGET_SCREEN_WIDTH := 1080
 PRODUCT_COPY_FILES += \
     vendor/lineage/config/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/vendor.lineage.biometrics.fingerprint.inscreen.xml
 
-# Charger
-PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,$(LOCAL_PATH)/charger,root/res/images/charger)
-
 # Audio
 PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/a2dp_audio_policy_configuration.xml \
@@ -57,10 +53,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-init.sh \
     lineage.livedisplay@2.0-service.V620A
-
-# Charger
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/charger:$(TARGET_COPY_OUT_SYSTEM)/bin/charger
 
 # Inherit from sm6150-common
 $(call inherit-product, device/vsmart/sm6150-common/common.mk)
